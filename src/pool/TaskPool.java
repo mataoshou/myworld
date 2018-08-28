@@ -25,6 +25,7 @@ public class TaskPool
 	{
 		TaskPool pool = new TaskPool();
 		pool.initPool();
+		
 		for (int i = 0; i < 10; i++)
 		{
 			pool.addTask(i);

@@ -10,21 +10,23 @@ public class DocumentReplace
 	public static void main(String[] args)
 	{
 		String[] paths= {
-				"E:\\WebProjects\\ShineOn-RMPP\\ShineOn_CMS\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\ShineOn-VMS\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\ShineOn-Topic\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\ShineOn-RMPP\\ShineOn-CC1.1\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\ShineOn-RMPP\\ShineOn-CC\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\ShineOn-News-1.1\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\ShineOn-RMPP\\ShineOn-Clue\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\ShineOn-Crawl\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\U-Censor-V2.1\\ShineOn-Censor\\WebRoot\\WEB-INF\\lib",
-				"E:\\WebProjects\\ShineOn-RMPP\\ShineOn-EQM\\WebRoot\\WEB-INF\\lib"
+				"E:\\WebProjects\\rmpp\\ShineOn_CMS\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-VMS\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-Topic\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-CC1.1\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-CC2.0\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-News\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-Clue\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-Crawl\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-Censor\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-EQM\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-NCS\\",
+				"E:\\WebProjects\\rmpp\\ShineOn-IMS\\"
 				};
-		File source = new File("E:\\WorkSpace\\shineon-servicefilter.jar");
+		File source = new File("c:/HibernateSessionFactory.java");
 		for(String s : paths)
 		{
-			File f = new File(s,"shineon-servicefilter.jar");
+			File f = new File(s,"src\\shineon\\db\\HibernateSessionFactory.java");
 			if(f.exists())
 			{
 				f.delete();
@@ -32,7 +34,7 @@ public class DocumentReplace
 			}
 			try
 			{
-				FileUtils.copyFile(source, f);
+				FileUtils.copyFile(source, new File(f.getParent() ,source.getName()));
 				System.out.println("添加最新的文件："+f.getPath());
 			} catch (IOException e)
 			{
